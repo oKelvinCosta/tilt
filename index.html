@@ -37,7 +37,7 @@
         transform-style: preserve-3d;
         will-change: transform;
         transform: perspective(300px) rotateX(0deg) rotateY(0deg);
-        
+
         background-image: url("alena-aenami-skylight1920.jpg");
         background-size: cover;
         width: 800px;
@@ -47,7 +47,7 @@
       }
 
       .inner {
-          /*Efeito para a bolinha dar um boom*/
+        /*Efeito para a bolinha dar um boom*/
         transform: translateZ(100px) translateX(-100px) translateY(40px)
           scale(0.8);
         background-color: #fe3142;
@@ -65,10 +65,12 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/tilt.js/dest/tilt.jquery.min.js"></script>
     <script>
-      $(".js-tilt").tilt({
-        glare: true,
-        maxGlare: 0.2,
-        maxTilt: 8,
+      $(function() {
+        $(".js-tilt").tilt({
+          glare: true,
+          maxGlare: 0.2,
+          maxTilt: 8
+        });
       });
     </script>
   </body>
