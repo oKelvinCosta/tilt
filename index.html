@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tilt.js</title>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        background: #211527;
+      }
+      .wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+      .box {
+        background-color: #f2f2f2;
+        height: 80px;
+        width: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .pai {
+        transform-style: preserve-3d;
+        will-change: transform;
+        transform: perspective(300px) rotateX(0deg) rotateY(0deg);
+        
+        background-image: url("alena-aenami-skylight1920.jpg");
+        background-size: cover;
+        width: 800px;
+        height: 400px;
+
+        box-shadow: 5px 5px 15px black;
+      }
+
+      .inner {
+          /*Efeito para a bolinha dar um boom*/
+        transform: translateZ(100px) translateX(-100px) translateY(40px)
+          scale(0.8);
+        background-color: #fe3142;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="pai box js-tilt" data-tilt>
+        <div class="inner box"></div>
+      </div>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/tilt.js/dest/tilt.jquery.min.js"></script>
+    <script>
+      $(".js-tilt").tilt({
+        glare: true,
+        maxGlare: 0.2,
+        maxTilt: 8,
+      });
+    </script>
+  </body>
+</html>
